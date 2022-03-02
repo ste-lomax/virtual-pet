@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "test": "jest --verbose --bail"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
