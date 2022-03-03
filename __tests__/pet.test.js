@@ -1,6 +1,6 @@
 const Pet = require('../src/pet');
 
-describe('constructor', () => {
+  describe('constructor', () => {
     it('returns an object', () => {
       expect(new Pet('Fido')).toBeInstanceOf(Object);
     });
@@ -18,7 +18,7 @@ describe('constructor', () => {
     });    
   });
 
-describe('growUp', () => {
+  describe('growUp', () => {
     it('increments the age by 1', () => {
       const pet = new Pet('Fido');
   
@@ -121,5 +121,41 @@ describe('growUp', () => {
       pet.checkUp();
   
       expect(pet.status).toEqual('I feel great!');
+    });
+  });
+
+  describe('isAlive', () => {
+    it('checks if fitness is 0 or less', () => {
+      const pet = new Pet('Fido');
+  
+      pet.fitness = 0;
+  
+      expect(pet.isAlive).toEqual(false);
+    });
+
+    it('checks if hunger is 10 or more', () => {
+      const pet = new Pet('Fido');
+  
+      pet.hunger = 10;
+  
+      expect(pet.isAlive).toEqual(false);
+    });
+
+    it('checks if age is 30 or more', () => {
+      const pet = new Pet('Fido');
+  
+      pet.age = 30;
+    
+      expect(pet.isAlive).toEqual(false);
+    });
+
+    it('checks if on last legs!', () => {
+      const pet = new Pet('Fido');
+  
+      pet.fitness = 1;
+      pet.hunger = 9;
+      pet.age = 29;
+  
+      expect(pet.isAlive).toEqual(true);
     });
   });
