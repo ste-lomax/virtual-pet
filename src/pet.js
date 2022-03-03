@@ -3,6 +3,7 @@ function Pet(name) {
     this.age = 0;
     this.hunger = 0;
     this.fitness = 10;
+    this.status = '';
 }
 
 Pet.prototype.growUp = function() {
@@ -29,6 +30,20 @@ Pet.prototype.feed = function() {
     } else {
         this.hunger = MINIMUM_HUNGER;
     }
+};
+
+Pet.prototype.checkUp = function() {
+    if ((this.fitness <= 3) && (this.hunger >= 5)) {
+        this.status = 'I am hungry AND I need a walk';
+        ('I am hungry AND I need a walk');
+    } else if (this.fitness <= 3) {
+        this.status = 'I need a walk';
+        console.log('I need a walk');
+    } else if (this.hunger >= 5) {
+        this.status = 'I am hungry';
+        console.log('I am hungry');
+    } else this.status = 'I feel great!';
+    console.log('I feel great!');
 };
 
 module.exports = Pet;
