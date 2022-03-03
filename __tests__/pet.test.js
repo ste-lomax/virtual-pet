@@ -19,6 +19,14 @@ const Pet = require('../src/pet');
   });
 
   describe('growUp', () => {
+    it('throws an error if the pet is not alive', () => {
+      const pet = new Pet('Fido');
+
+      pet.age = 30;
+
+      expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
+    });
+    
     it('increments the age by 1', () => {
       const pet = new Pet('Fido');
   
@@ -45,6 +53,14 @@ const Pet = require('../src/pet');
   });
 
   describe('walk', () => {
+    it('throws an error if the pet is not alive', () => {
+      const pet = new Pet('Fido');
+
+      pet.age = 30;
+
+      expect(() => pet.walk()).toThrow('Your pet is no longer alive :(');
+    });
+    
     it('increases fitness by 4', () => {
       const pet = new Pet('Fido');
   
@@ -65,6 +81,14 @@ const Pet = require('../src/pet');
   });
 
   describe('feed', () => {
+    it('throws an error if the pet is not alive', () => {
+      const pet = new Pet('Fido');
+
+      pet.age = 30;
+
+      expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+    });
+    
     it('decreases hunger by 3', () => {
       const pet = new Pet('Fido');
   
