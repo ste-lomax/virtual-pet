@@ -17,7 +17,7 @@ Pet.prototype.walk = function() {
     if ((this.fitness + 4) <= MAXIMUM_FITNESS) {
         this.fitness += 4;
     } else {
-        this.fitness = 10;
+        this.fitness = MAXIMUM_FITNESS;
     }
 };
 
@@ -27,7 +27,7 @@ Pet.prototype.feed = function() {
     if ((this.hunger - 3) >= MINIMUM_HUNGER) {
         this.hunger -= 3;
     } else {
-        this.hunger = 0;
+        this.hunger = MINIMUM_HUNGER;
     }
 };
 
